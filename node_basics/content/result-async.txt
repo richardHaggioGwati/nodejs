@@ -1,0 +1,1 @@
+Here is the result: hello world from first file, hello from second file.txt.Created by asynchronous functionHere is the result: hello world from first file, hello from second file.txt.Created by synchronous functionHere is the result: hello world from first file, hello from second file.txt.Created by synchronous function

@@ -1,0 +1,1 @@
+This is so amazing: hello world from first file & the second is hello from second file.txt
