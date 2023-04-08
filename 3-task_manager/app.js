@@ -1,6 +1,8 @@
 const express = require('express');
 const app = express();
-const tasks = require('./Routes/tasks');
+const tasks = require('./routes/tasks');
+const connectDB = require('./db/connect');
+require('dotenv').config();
 
 const port = 5000;
 
@@ -13,9 +15,13 @@ app.get('/hello', (req, res) => res.send('Task Management Application'));
 // app.get('/api/v1/tasks')             -   get all tasks
 app.use('/api/v1/tasks', tasks);
 
-// app.post('/api/v1/tasks')            -   create a new task
-// app.get('/api/v1/tasks/:id')         -   get single task
-// app.patch('/api/v1/tasks/:id')       -   update single task
-// app.delete('/api/v1/tasks/:id')      -   delete task
+const start = async () => {
+    try {
+		await connectDB(process.env.MONGO_URL);
+		app.listen(port, console.log(`server is listening on port ${port}...`));
+	} catch (err) {
+		console.log(err);
+	}
+};
 
-app.listen(port, console.log(`server is listening on port ${port}...`));
+start();
