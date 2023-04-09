@@ -7,6 +7,7 @@ require('dotenv').config();
 const port = 5000;
 
 //middleware
+app.use(express.static("./public"))
 app.use(express.json());
 
 // route to be created
