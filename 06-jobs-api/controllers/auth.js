@@ -1,5 +1,5 @@
 const register = async (req, res) => {
-    res.send('Register user')
+    res.json(req.body)
 }
 
 const login = async (req, res) => {
